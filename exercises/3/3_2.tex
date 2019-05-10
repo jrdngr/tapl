@@ -1,0 +1,56 @@
+\documentclass[12pt,letterpaper,boxed]{hmcpset}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+
+\newtheorem{definition}{Definition}[section]
+
+\newcommand{\f}[2]{\textnormal{\textbf{#1}}\ #2\ }
+\newcommand{\val}[1]{\textnormal{\textbf{#1}}}
+
+% info for header block in upper right hand corner
+\name{}
+\class{}
+\assignment{}
+\duedate{}
+
+\begin{document}
+
+\problemlist{}
+
+\begin{definition}[3.2.3]
+    For each natural number $i$, define a set $S_i$ as follows:
+    \begin{align*}
+        S_0 &= \emptyset \\
+        S_{i+1} &= \{\val{true}, \val{false}, \val{0}\} \\
+                &\cup \{\f{succ}{t_1}, \f{pred}{t_1}, \f{iszero}{t_1} \mid t_1 \in S_i \} \\
+                &\cup \{\f{if}{t_1} \f{then}{t_2} \f{else}{t_3} \mid t_1, t_2, t_3 \in S_i\}
+    \end{align*}
+    \begin{align*}
+        S = \bigcup_i S_i
+    \end{align*}
+\end{definition}
+
+\begin{problem}[3.2.4]
+How many elements does $S_3$ have?
+\end{problem}
+
+\begin{solution}
+    \begin{align*}
+        |S_0| &= 0 \\
+        |S_1| &= 3 + 0 + 0 = 3 \\
+        |S_2| &= 3 + 3*3 + 3^3 = 39 \\
+        |S_3| &= 3 + 39*3 + 39^3 = 59,439 
+    \end{align*}
+\end{solution}
+
+\begin{problem}[3.2.5]
+Show that the sets $S_i$ are \emph{cumulative} -- that is, for each $i$ we have $S_i \subseteq S_{i+1}$.
+\end{problem}
+
+\begin{solution}
+    
+\end{solution}
+
+\end{document}
