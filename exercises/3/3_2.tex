@@ -50,7 +50,14 @@ Show that the sets $S_i$ are \emph{cumulative} -- that is, for each $i$ we have 
 \end{problem}
 
 \begin{solution}
-    
+    Base: $S_0 = \emptyset \subseteq T\ \forall\ T$ \\
+    Assume: $S_i \subseteq S_{i+1}$ \\
+    WTS: $S_{i+1} \subseteq S_{i+2}$
+    \begin{align*}
+        S_{i+2} &= \{\val{true}, \val{false}, \val{0}\} \\
+            &\cup \{\f{succ}{t_1}, \f{pred}{t_1}, \f{iszero}{t_1} \mid t_1 \in S_{i+1} \} \\
+            &\cup \{\f{if}{t_1} \f{then}{t_2} \f{else}{t_3} \mid t_1, t_2, t_3 \in S_{i+1}\}
+    \end{align*}
 \end{solution}
 
 \end{document}
